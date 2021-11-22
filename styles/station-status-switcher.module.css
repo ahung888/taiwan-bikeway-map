@@ -1,0 +1,41 @@
+.w {
+  display: flex;
+  flex-direction: row;
+  background-color: #d1d1d1;
+  border-radius: 2rem;
+  height: 3.1rem;
+  align-items: center;
+  width: 7rem;
+}
+.bg {
+  position: relative;
+  background-color: #fff;
+  content: "";
+  width: 7.2rem;
+  height: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+}
+
+.btnSwitch {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.pinBall {
+  width: 5rem;
+  height: 3rem;
+  border-radius: 3rem;
+  background-color: #f8b230;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: margin-left .4s ease;
+}
+.pinBall.right {
+  margin-left: 2rem;
+  background-color: #f36969;
+}

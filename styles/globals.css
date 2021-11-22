@@ -14,3 +14,25 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --primary-color: #42b883;
+  --primary-light-color: #58ffb4;
+  --primary-background-color: rgba(66, 184, 131, .15);
+}
+
+.btn {
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 1px rgba(0,0,0,.15);
+}
+.btn:hover {
+  /* background-color: var(--primary-color); */
+  background-color: rgb(235, 235, 235);
+  /* color: #fff; */
+}
+.btn.active {
+  color: #fff;
+  /* background-color: rgb(235, 235, 235); */
+  background-color: var(--primary-color);
+}
