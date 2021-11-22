@@ -139,19 +139,6 @@ const Map = () => {
         {/* <ScaleControl maxWidth={100} unit="metric" style={scaleControlStyle} /> */}
         
         <StationPins geojson={stationGeojson} />
-        <Source 
-          id="stations"
-          type="geojson"
-          data={{features: stationGeojson}}
-          // lineMetrics
-          cluster={true}
-          clusterMaxZoom={14}
-          clusterRadius={50}
-        >
-          <Layer {...clusterLayer} />
-          <Layer {...clusterCountLayer} />
-        </Source>
-
 
         <Source 
           id="bikeway"

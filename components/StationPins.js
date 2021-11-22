@@ -26,8 +26,7 @@ const StationPins = (props) => {
     }
   }
 
-  return mapContext.viewport.zoom > 14
-  ? geojson.map((geo, i) => {
+  return geojson.map((geo, i) => {
 
     const renderedNumber = showAvailableRent ? geo?.properties?.AvailableRentBikes : geo?.properties?.AvailableReturnBikes
     const isSelected = selectedStationUID === geo?.properties?.StationUID ? true : false
@@ -71,7 +70,6 @@ const StationPins = (props) => {
       </Marker>
     )
   })
-  : ''
 }
 
 export default React.memo(StationPins)
