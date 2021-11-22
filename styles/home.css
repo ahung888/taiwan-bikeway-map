@@ -1,6 +1,6 @@
 /* layout */
 body {
-  background-color: antiquewhite;
+  background-color: #fff;
 }
 
 .header {
@@ -18,7 +18,11 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 300;
-  max-width: 350px;
+}
+@media screen and (min-width: 651px) {
+  .item-list {
+    max-width: 350px;
+  }
 }
 @media screen and (max-width: 650px) {
   .item-list {
@@ -28,7 +32,7 @@ body {
     height: 200px;
     overflow-x: auto;
     overflow-y: hidden;
-    width: calc(100vw - 20px);
+    width: calc(100vw - 55px);
   }
 }
 

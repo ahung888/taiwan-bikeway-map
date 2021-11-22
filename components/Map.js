@@ -7,9 +7,9 @@ import MapGL, {
 } from 'react-map-gl';
 import StationPins from './StationPins'
 import { HOME_POS } from '../store/position'
-import {clusterLayer, clusterCountLayer, routeLayer} from './layers';
+import {routeLayer} from './layers';
 import {useSelector} from 'react-redux'
-import {selectDevice, selectSearch} from '../store'
+import {selectDevice} from '../store'
 import {selectSelectedBikeway} from '../store/bikewayReducer'
 import {selectBikeStation} from '../store/bikeStationReducer'
 import {parseStationDataToGeojson} from '../utils/dataHelper'
@@ -37,20 +37,6 @@ const Map = () => {
   }
 
   useEffect(() => {
-    const map = refMap.current.getMap()
-    const features = map.features
-    // let s = map.getSource('earthquakes')
-    map.loadImage(
-      'http://localhost:3000/taiwan-bikeway-map/20210517-01.jpg',
-      (error, image) => {
-        if (error) throw error
-        map.addImage('cat', image)
-      }
-    )
-    // animation.start()
-  }, [refMap])
-
-  useEffect(() => {
     if (typeof document !== undefined) {
       document.addEventListener('flytospot', flyToPosition)
       return () => document.removeEventListener('flytospot', flyToPosition)
@@ -67,21 +53,10 @@ const Map = () => {
       latitude: lat,
       longitude: long + offsetLongitude,
       zoom: Math.max(viewport.zoom, zoomLevel.spot),
-      // transitionInterpolator: new FlyToInterpolator({speed: 1.2}),
-      // transitionDuration: 'auto'
     })
-
-    // dispatch(setPopupInfo(entity))
   }).bind(viewport)
   
-  const onClick = event => {
-    const feature = event.features[0];
-    // setViewport(new WebMercatorViewport({width: 800, height: 600})
-    //   .fitBounds([[-122.4, 37.7], [-122.5, 37.8]], {
-    //     padding: 20,
-    //     offset: [0, -100]
-    // }))
-  }
+  const onClick = event => {}
 
   const geolocateControlStyle= {
     right: 7,
@@ -91,17 +66,11 @@ const Map = () => {
     right: 7,
     bottom: 40
   };
-  const scaleControlStyle= {
-    right: 50,
-    bottom: 10
-  };
 
   const stationGeojson = parseStationDataToGeojson(Object.values(stations))
   let bikewayData = {}
   if (selectedBikeway) {
-    console.log('selectedBikeway: ', selectedBikeway)
     let coordinates = GeometryToCoordinates(selectedBikeway.Geometry)
-    console.log('coordinates: ', coordinates)
     bikewayData = {
       'type': 'FeatureCollection',
       'features': [
@@ -114,7 +83,6 @@ const Map = () => {
         }
       ]
     }
-    // flyToPosition({ position: { long: coordinates[0][0], lat: coordinates[0][1] }})
   }
 
   return (
@@ -136,7 +104,6 @@ const Map = () => {
           auto
         />
         <NavigationControl style={navControlStyle} />
-        {/* <ScaleControl maxWidth={100} unit="metric" style={scaleControlStyle} /> */}
         
         <StationPins geojson={stationGeojson} />
 

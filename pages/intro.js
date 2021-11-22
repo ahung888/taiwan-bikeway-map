@@ -26,10 +26,10 @@ const IntroPage = () => {
         <section>
           <div className="wrapper">
             <div className="node">
-              <h1>在地圖上探索台灣的旅遊景點</h1>
+              <h1>查詢台灣自行車道的地圖資訊</h1>
             </div>
             <div className="node">
-              <Image src="/images/intro/search-filter.png" alt="search filter" />
+              <Image src="/images/intro/search-bikeway.png" alt="search filter" />
             </div>
           </div>
         </section>
@@ -37,10 +37,10 @@ const IntroPage = () => {
         <section>
           <div className="wrapper reverse">
             <div className="node">
-              <h3>顯示搜尋結果列表，並標記在地圖上</h3>
+              <h3>標記自行車租借站在地圖上</h3>
             </div>
             <div className="node">
-              <Image src="/images/intro/search-result.png" alt="search result" />
+              <Image src="/images/intro/search-stations.png" alt="search result" />
             </div>
           </div>
         </section>
@@ -48,10 +48,10 @@ const IntroPage = () => {
         <section>
           <div className="wrapper">
             <div className="node">
-              <h3>點擊感興趣的景點，來獲得更多相關的訊息</h3>
+              <h3>查詢各租借站的車輛使用率，方便借/還車</h3>
             </div>
             <div className="node">
-              <Image src="/images/intro/search-result-detail.png" alt="search result detail" />
+              <Image src="/images/intro/station-status.png" alt="search result detail" />
             </div>
           </div>
         </section>

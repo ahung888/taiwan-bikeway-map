@@ -1,3 +1,4 @@
+import {useEffect} from 'react';
 import {useSelector} from 'react-redux'
 import {selectSearch, SEARCH_TYPE} from '../store'
 import {selectBikeway} from '../store/bikewayReducer'
@@ -9,6 +10,10 @@ const ItemList = ({}) => {
   const searchType = useSelector(selectSearch('type'))
   const bikeways = useSelector(selectBikeway('entities'))
   const stations = useSelector(selectBikeStation('stations'))
+
+  const handleScrolling = event => {
+    // console.log(event)
+  }
 
   let renderedItems = ''
   if (searchType === SEARCH_TYPE.BIKEWAY) {
@@ -22,7 +27,7 @@ const ItemList = ({}) => {
   }
 
   return (
-    <div className="item-list">
+    <div className="item-list" onScroll={handleScrolling}>
       {renderedItems}
     </div>
   )
