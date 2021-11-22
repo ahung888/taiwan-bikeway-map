@@ -57,7 +57,7 @@ const StationPins = (props) => {
         >
           <path d={ICON} />
           <circle cx="12" cy="10" r="7" fill="#fff" />
-          <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" style={{ "font-size": '10px', fill: '#000', transform: `translate(0, -1px)` }}>
+          <text x="50%" y="50%" style={{ "font-size": '10px', fill: '#000', transform: `translate(-6px, 1px)` }}>
             {renderedNumber}
           </text>
         </svg>
